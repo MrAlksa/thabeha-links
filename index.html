@@ -1,1 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Thabeha — All links</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <img id="logo" src="" alt="Thabeha logo" style="display:none" />
+      <h1 id="businessName">Thabeha</h1>
+      <p id="tagline">One place for all our social links. Scan the QR or tap a button.</p>
+    </header>
 
+    <section class="links" id="links">
+      <!-- Buttons injected by script -->
+    </section>
+
+    <section class="qr-card">
+      <div id="qrcode"></div>
+      <div class="qr-actions">
+        <button id="downloadQr">Download QR</button>
+        <button id="copyLink">Copy Link</button>
+      </div>
+      <p class="small">QR points to: <a id="shareUrl" href="#" target="_blank" rel="noopener"></a></p>
+    </section>
+
+    <footer class="footer">
+      <small>Built for small businesses — customize and host on GitHub Pages or Netlify.</small>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
