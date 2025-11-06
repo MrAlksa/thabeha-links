@@ -7,7 +7,7 @@ const config = {
   // shareUrl set to your business domain:
   shareUrl: "https://thabeha.com/",
   links: [
-    { id: "website", title: "Website", url: "https://thabeha.com/", subtitle: "Visit our site", color: "#06b6d4", icon: "https://cdn.salla.sa/cdn-cgi/image/fit=scale-down,width=400,height=400,onerror=redirect,format=auto/PjvZx/z5c5FGiieo6UGxQ4dlSAM3qtD5blpc4XSqXTPQOD.png" },
+    { id: "website", title: "Website", url: "https://thabeha.com/", subtitle: "Visit our site", color: "#06b6d4", icon: "🌐" },
     { id: "x", title: "X / Twitter", url: "https://x.com/thabeha2", subtitle: "@thabeha2", color: "#1DA1F2", icon: "🐦" },
     { id: "tiktok", title: "TikTok", url: "https://www.tiktok.com/@thabeha2", subtitle: "@thabeha2", color: "#000000", icon: "🎵" },
     { id: "instagram", title: "Instagram", url: "https://instagram.com/thabehaa", subtitle: "@thabehaa", color: "#c13584", icon: "📸" },
