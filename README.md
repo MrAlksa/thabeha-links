@@ -8,7 +8,7 @@ What I added
 - TikTok: https://www.tiktok.com/@thabeha2
 - Instagram: https://instagram.com/thabehaa
 - Snapchat: https://www.snapchat.com/add/thabehaa
-- WhatsApp: https://wa.me/966598220111 (+966 59 822 0111)
+- WhatsApp: https://wa.me/96659547020706
 
 Quick usage
 1. Edit `script.js` (config) to:
