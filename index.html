@@ -4,17 +4,32 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Thabeha — All links</title>
+
+  <!-- SEO / Open Graph -->
+  <meta name="description" content="All Thabeha social links in one place — Website, Instagram, TikTok, Snapchat, X and WhatsApp." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://thabeha.com/" />
+  <meta property="og:title" content="Thabeha — All links" />
+  <meta property="og:description" content="All Thabeha social links in one place." />
+  <meta property="og:image" content="https://cdn.salla.sa/cdn-cgi/image/fit=scale-down,width=400,height=400,onerror=redirect,format=auto/PjvZx/z5c5FGiieo6UGxQ4dlSAM3qtD5blpc4XSqXTPQOD.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@thabeha2" />
+  <meta name="twitter:title" content="Thabeha — All links" />
+  <meta name="twitter:description" content="All Thabeha social links in one place." />
+
+  <!-- Performance: preconnect for external origins -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+
   <link rel="stylesheet" href="style.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
   <main class="container">
     <header class="header">
       <img id="logo" src="" alt="Thabeha logo" style="display:none" />
       <h1 id="businessName">Thabeha</h1>
-      <p id="tagline">One place for all our social links. Scan the QR or tap a button.</p>
+      <p id="tagline" class="tagline">One place for all our social links. Scan the QR or tap a button.</p>
     </header>
 
     <section class="links" id="links">
@@ -35,6 +50,8 @@
     </footer>
   </main>
 
-  <script src="script.js"></script>
+  <!-- QR library loaded last so it doesn't block rendering -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
