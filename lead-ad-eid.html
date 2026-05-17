@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ذبحة — بريف إعلان الأضاحي (ميتا / الدمام)</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --red:    #c0392b;
+      --dark:   #1a1a1a;
+      --gold:   #c9a84c;
+      --cream:  #fdf6ec;
+      --card:   #ffffff;
+      --border: #e8ddd0;
+      --muted:  #6b5e52;
+      --green:  #1a7f4b;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'IBM Plex Sans Arabic', system-ui, sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+      line-height: 1.7;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: var(--dark);
+      color: #fff;
+      padding: 40px 24px 32px;
+      text-align: center;
+    }
+    .header .badge {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--dark);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+    .header h1 { font-size: clamp(22px, 5vw, 34px); font-weight: 700; margin-bottom: 6px; }
+    .header p  { font-size: 14px; color: #aaa; }
+
+    /* ── Layout ── */
+    .wrapper { max-width: 860px; margin: 0 auto; padding: 32px 16px 64px; }
+    .section  { margin-bottom: 32px; }
+    .section-title {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── Cards ── */
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+    }
+    .card + .card { margin-top: 12px; }
+
+    /* ── Creative mockup ── */
+    .creative-box {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--dark);
+    }
+    .creative-label {
+      background: var(--dark);
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 10px 16px;
+      text-transform: uppercase;
+    }
+    .creative-body {
+      background: #f5f5f5;
+      padding: 20px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .creative-img-placeholder {
+      width: 140px;
+      min-width: 140px;
+      height: 140px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #8b1a1a 0%, #c0392b 50%, #e74c3c 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+    }
+    .creative-copy { flex: 1; }
+    .fb-page-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    .fb-avatar {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: var(--red);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+    }
+    .fb-page-name { font-size: 13px; font-weight: 700; }
+    .fb-sponsored { font-size: 11px; color: #888; }
+    .primary-text {
+      font-size: 14px;
+      line-height: 1.65;
+      color: var(--dark);
+      margin-bottom: 12px;
+      white-space: pre-line;
+    }
+    .creative-footer {
+      background: #e4e6ea;
+      padding: 10px 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .ad-headline { font-size: 15px; font-weight: 700; }
+    .ad-desc     { font-size: 12px; color: #555; }
+    .cta-btn {
+      background: var(--red);
+      color: #fff;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    /* ── Copy block ── */
+    .copy-field { margin-bottom: 20px; }
+    .copy-field:last-child { margin-bottom: 0; }
+    .copy-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .copy-value {
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 16px;
+      font-size: 15px;
+      line-height: 1.7;
+      white-space: pre-line;
+    }
+    .char-count {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 4px;
+      text-align: left;
+      direction: ltr;
+    }
+    .highlight { color: var(--red); font-weight: 700; }
+
+    /* ── Targeting grid ── */
+    .target-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 12px;
+    }
+    .target-card {
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+    }
+    .target-card .t-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 6px;
+    }
+    .target-card .t-value {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--dark);
+    }
+    .target-card .t-sub {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    /* ── Lead form ── */
+    .form-question {
+      display: flex;
+      gap: 14px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+      align-items: flex-start;
+    }
+    .form-question:last-child { border-bottom: none; }
+    .q-num {
+      width: 28px; min-width: 28px; height: 28px;
+      background: var(--red);
+      color: #fff;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .q-body .q-ar   { font-size: 15px; font-weight: 600; }
+    .q-body .q-type { font-size: 11px; color: var(--muted); margin-top: 2px; }
+    .q-body .q-opts {
+      margin-top: 8px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .q-opt {
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 3px 12px;
+      font-size: 12px;
+    }
+
+    /* ── Budget table ── */
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th {
+      background: var(--dark);
+      color: #fff;
+      padding: 10px 14px;
+      text-align: right;
+      font-weight: 600;
+      font-size: 12px;
+    }
+    td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) td { background: var(--cream); }
+    .tag {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+    .tag-green { background: #d4edda; color: var(--green); }
+    .tag-red   { background: #fde8e8; color: var(--red); }
+    .tag-gold  { background: #fef3cd; color: #856404; }
+
+    /* ── Timeline ── */
+    .timeline { position: relative; padding-right: 24px; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      right: 7px; top: 8px; bottom: 8px;
+      width: 2px;
+      background: var(--border);
+    }
+    .tl-item { display: flex; gap: 14px; margin-bottom: 20px; align-items: flex-start; }
+    .tl-dot {
+      width: 16px; min-width: 16px; height: 16px;
+      border-radius: 50%;
+      margin-top: 3px;
+      position: relative;
+      z-index: 1;
+    }
+    .tl-dot.active { background: var(--red); }
+    .tl-dot.soon   { background: var(--gold); }
+    .tl-dot.future { background: var(--border); }
+    .tl-content .tl-date { font-size: 11px; color: var(--muted); font-weight: 700; }
+    .tl-content .tl-label { font-size: 14px; font-weight: 600; }
+    .tl-content .tl-note  { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+    /* ── Tips ── */
+    .tips { list-style: none; }
+    .tips li {
+      padding: 10px 14px;
+      border-right: 3px solid var(--gold);
+      margin-bottom: 8px;
+      background: #fffbf0;
+      border-radius: 0 8px 8px 0;
+      font-size: 14px;
+    }
+
+    /* ── Footer ── */
+    .doc-footer {
+      text-align: center;
+      padding: 32px 16px;
+      font-size: 12px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+    .doc-footer strong { color: var(--dark); }
+
+    @media (max-width: 600px) {
+      .creative-body { flex-direction: column; }
+      .creative-img-placeholder { width: 100%; height: 200px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <div class="badge">🐑 Meta Lead Ad Brief — عيد الأضحى ١٤٤٧</div>
+  <h1>ذبحة — حملة الأضاحي | الدمام</h1>
+  <p>بريف كامل لإعلان الليدز على ميتا (فيسبوك + إنستقرام) · منطقة الدمام · الجمهور: عائلات الخليج</p>
+</div>
+
+<div class="wrapper">
+
+  <!-- ══════════════════════════════════
+       1. CREATIVE MOCKUP
+  ══════════════════════════════════ -->
+  <div class="section">
+    <div class="section-title">١ — الكريتيف (الصورة المستخدمة)</div>
+    <div class="creative-box">
+      <div class="creative-label">📱 معاينة الإعلان — فيد إنستقرام / فيسبوك</div>
+      <div class="creative-body">
+        <div class="creative-img-placeholder">🐑</div>
+        <div class="creative-copy">
+          <div class="fb-page-row">
+            <div class="fb-avatar">🐑</div>
+            <div>
+              <div class="fb-page-name">ذبحة | Thabeha</div>
+              <div class="fb-sponsored">مموّل · الدمام</div>
+            </div>
+          </div>
+          <div class="primary-text">🐑 أضحيتك هذا العيد من ذبحة
+احجز خروفك الآن — محدود والكميات تنتهي قبل الفاؤل ✅
+
+✔ ذبح حلال مضمون
+✔ طازج من المزرعة لمطبخك
+✔ توصيل داخل الدمام
+✔ اختار: كامل أو مقطّع حسب طلبك
+
+🕌 أدِّ سنة إبراهيم بثقة — اطلب الآن وخلّنا نوصلك</div>
+        </div>
+      </div>
+      <div class="creative-footer">
+        <div>
+          <div class="ad-headline">احجز أضحيتك — الدمام 🐑</div>
+          <div class="ad-desc">ذبحة · توصيل طازج لبابك</div>
+        </div>
+        <button class="cta-btn">احجز الآن</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       CREATIVE SPEC NOTE
+  ══════════════════════════════════ -->
+  <div class="section">
+    <div class="card">
+      <div class="copy-label">مواصفات الصورة / الكريتيف</div>
+      <div style="font-size:14px; line-height:1.8; margin-top:8px;">
+        <strong>الصورة الرئيسية:</strong> صورة الخروف المصنوع من قطع اللحم (موجودة) — تُستخدم كما هي، فريدة ولافتة وتعبّر عن المنتج بشكل إبداعي.<br><br>
+        <strong>المقاسات المطلوبة:</strong><br>
+        · <strong>Feed:</strong> 1080×1080 px (مربع) أو 1080×1350 px (4:5)<br>
+        · <strong>Story / Reels:</strong> 1080×1920 px (9:16)<br>
+        · <strong>الصيغة:</strong> JPG أو PNG · حجم أقل من 30MB<br><br>
+        <strong>نص على الصورة (اختياري):</strong> أضف شعار ذبحة في الزاوية + نص صغير: <span class="highlight">«احجز أضحيتك»</span><br>
+        <strong>لا تغطي أكثر من 20% من الصورة بنص</strong> (قاعدة ميتا)
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       2. AD COPY (ARABIC)
+  ══════════════════════════════════ -->
+  <div class="section">
+    <div class="section-title">٢ — نص الإعلان (النسخ الكاملة)</div>
+
+    <div class="card">
+
+      <!-- Version A — Emotional -->
+      <div style="display:inline-block;background:#fde8e8;color:var(--red);font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;margin-bottom:16px;">النسخة A — عاطفي (موصى بها للاختبار أولاً)</div>
+
+      <div class="copy-field">
+        <div class="copy-label">النص الرئيسي (Primary Text)</div>
+        <div class="copy-value">🐑 أضحيتك هذا العيد من ذبحة
+
+احجز خروفك الآن — محدود والكميات تنتهي قبل الفاؤل ✅
+
+✔ ذبح حلال مضمون
+✔ طازج من المزرعة لمطبخك
+✔ توصيل داخل الدمام
+✔ اختار: كامل أو مقطّع حسب طلبك
+
+🕌 أدِّ سنة إبراهيم بثقة — اطلب الآن وخلّنا نوصلك</div>
+        <div class="char-count">~160 character — within Meta's optimal 125-char primary text window</div>
+      </div>
+
+      <div class="copy-field">
+        <div class="copy-label">العنوان (Headline) — 40 حرف max</div>
+        <div class="copy-value">احجز أضحيتك — الدمام 🐑</div>
+      </div>
+
+      <div class="copy-field">
+        <div class="copy-label">الوصف (Description) — 30 حرف max</div>
+        <div class="copy-value">ذبحة · ذبح حلال · توصيل طازج</div>
+      </div>
+
+      <div class="copy-field">
+        <div class="copy-label">زر الدعوة للإجراء (CTA)</div>
+        <div class="copy-value">احجز الآن  ←  <span style="color:#888;font-size:13px;">"Book Now" في ميتا</span></div>
+      </div>
+
+      <hr style="border:none;border-top:1px solid var(--border);margin:24px 0;">
+
+      <!-- Version B — Urgency -->
+      <div style="display:inline-block;background:#fef3cd;color:#856404;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;margin-bottom:16px;">النسخة B — إلحاح (للاختبار A/B)</div>
+
+      <div class="copy-field">
+        <div class="copy-label">النص الرئيسي (Primary Text) — B</div>
+        <div class="copy-value">⏳ العيد بعد أيام والأضاحي محدودة
+
+سجّل بياناتك الآن واحجز خروفك من ذبحة قبل ما تنتهي الكميات 🐑
+
+- طازج 100% ومذبوح حلال
+- توصيل لبابك في الدمام
+- كامل أو مقطّع — اختارته أنت
+
+لا تفوّت أضحيتك هذا الموسم ✅</div>
+        <div class="char-count">~175 chars</div>
+      </div>
+
+      <div class="copy-field">
+        <div class="copy-label">العنوان (Headline) — B</div>
+        <div class="copy-value">الكميات تنتهي — احجز الآن 🕌</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       3. TARGETING
+  ══════════════════════════════════ -->
+  <div class="section">
+    <div class="section-title">٣ — إعدادات الاستهداف (Meta Ads Manager)</div>
+    <div class="card">
+      <div class="target-grid">
+        <div class="target-card">
+          <div class="t-label">📍 الموقع الجغرافي</div>
+          <div class="t-value">الدمام</div>
+          <div class="t-sub">المنطقة الشرقية، المملكة العربية السعودية<br>نصف قطر: 15 كم من مركز الدمام<br>(يشمل الخبر، القطيف، صفوى)</div>
+        </div>
+        <div class="target-card">
+          <div class="t-label">👤 الفئة العمرية</div>
+          <div class="t-value">25 – 55 سنة</div>
+          <div class="t-sub">رب الأسرة / صاحب القرار<br>بدّل لـ 30-55 إذا CPL مرتفع</div>
+        </div>
+        <div class="target-card">
+          <div class="t-label">⚧ الجنس</div>
+          <div class="t-value">الجميع</div>
+          <div class="t-sub">ابدأ بالجميع، قيّد للذكور فقط إذا CTR النساء أقل</div>
+        </div>
+        <div class="target-card">
+          <div class="t-label">🌐 اللغة</div>
+          <div class="t-value">العربية</div>
+          <div class="t-sub">Arabic (ar) فقط<br>يضمن عدم إهدار budget على expats</div>
+        </div>
+        <div class="target-card">
+          <div class="t-label">🎯 الاهتمامات</div>
+          <div class="t-value">تفصيلي</div>
+          <div class="t-sub">
+            · الطعام الحلال<br>
+            · عيد الأضحى<br>
+            · اللحوم الطازجة<br>
+            · الطبخ العربي / المطبخ السعودي<br>
+            · الأسرة والمنزل
+          </div>
+        </div>
+        <div class="target-card">
+          <div class="t-label">📱 الأجهزة</div>
+          <div class="t-value">Mobile فقط</div>
+          <div class="t-sub">~92% من الجمهور السعودي يتصفح عبر الجوال</div>
+        </div>
+        <div class="target-card">
+          <div class="t-label">📣 المواضع (Placements)</div>
+          <div class="t-value">يدوي</div>
+          <div class="t-sub">
+            ✅ Instagram Feed<br>
+            ✅ Instagram Stories<br>
+            ✅ Facebook Feed<br>
+            ✅ Facebook Stories<br>
+            ❌ Audience Network (أوقفه)
+          </div>
+        </div>
+        <div class="target-card">
+          <div class="t-label">🎯 هدف الحملة</div>
+          <div class="t-value">Lead Generation</div>
+          <div class="t-sub">Instant Form داخل التطبيق<br>لا تستخدم Traffic أو Conversions</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       4. LEAD FORM
+  ══════════════════════════════════ -->
+  <div class="section">
+    <div class="section-title">٤ — نموذج الليد (Instant Form)</div>
+    <div class="card">
+
+      <div style="margin-bottom:16px;">
+        <div class="copy-label">نوع النموذج</div>
+        <div style="font-size:14px;margin-top:6px;">اختر <strong>«High Intent»</strong> في ميتا — يضيف شاشة مراجعة تقلل الليدز الوهمية وتزيد جودة العميل</div>
+      </div>
+
+      <div style="margin-bottom:16px;">
+        <div class="copy-label">شاشة الترحيب (Intro Screen)</div>
+        <div class="copy-value" style="font-size:14px;">🐑 احجز أضحيتك من ذبحة
+املأ بياناتك وسنتواصل معك على الواتساب لتأكيد الحجز وإتمام الطلب</div>
+      </div>
+
+      <div class="copy-label" style="margin-bottom:12px;">أسئلة النموذج</div>
+
+      <div class="form-question">
+        <div class="q-num">١</div>
+        <div class="q-body">
+          <div class="q-ar">الاسم الكريم</div>
+          <div class="q-type">نوع: Full Name (تلقائي من ميتا)</div>
+        </div>
+      </div>
+
+      <div class="form-question">
+        <div class="q-num">٢</div>
+        <div class="q-body">
+          <div class="q-ar">رقم الواتساب</div>
+          <div class="q-type">نوع: Phone Number (تلقائي من ميتا) · أضف ملاحظة: «سيتم التواصل معك على هذا الرقم»</div>
+        </div>
+      </div>
+
+      <div class="form-question">
+        <div class="q-num">٣</div>
+        <div class="q-body">
+          <div class="q-ar">حيّك في الدمام؟</div>
+          <div class="q-type">نوع: Dropdown (اختيار واحد)</div>
+          <div class="q-opts">
+            <span class="q-opt">الشاطئ</span>
+            <span class="q-opt">العزيزية</span>
+            <span class="q-opt">النورس</span>
+            <span class="q-opt">الفيصلية</span>
+            <span class="q-opt">الحمراء</span>
+            <span class="q-opt">الخبر</span>
+            <span class="q-opt">صفوى</span>
+            <span class="q-opt">حي آخر</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-question">
+        <div class="q-num">٤</div>
+        <div class="q-body">
+          <div class="q-ar">ماذا تحتاج في أضحيتك؟</div>
+          <div class="q-type">نوع: Multiple Choice (اختيار واحد)</div>
+          <div class="q-opts">
+            <span class="q-opt">🐑 خروف كامل</span>
+            <span class="q-opt">🔪 مقطّع وجاهز</span>
+            <span class="q-opt">📦 كامل + تقطيع</span>
+            <span class="q-opt">📞 أبغى أعرف أكثر</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:20px;padding:14px;background:var(--cream);border-radius:8px;font-size:13px;border:1px solid var(--border);">
+        <strong>📋 شاشة الشكر (Thank You Screen):</strong><br>
+        العنوان: شكراً — وصلنا طلبك! 🎉<br>
+        النص: سيتواصل معك فريق ذبحة على الواتساب خلال ساعات لتأكيد حجزك<br>
+        CTA Button: تفضل بزيارة متجرنا ← thabeha.com
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       5. BUDGET & SCHEDULE
+  ══════════════════════════════════ -->
+  <div class="section">
+    <div class="section-title">٥ — الميزانية والجدول الزمني</div>
+    <div class="card" style="padding:0;overflow:hidden;">
+      <table>
+        <thead>
+          <tr>
+            <th>المرحلة</th>
+            <th>الفترة</th>
+            <th>الميزانية / يوم</th>
+            <th>الهدف</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Learning Phase</strong><br><span style="font-size:12px;color:var(--muted);">دع ميتا يتعلم الجمهور</span></td>
+            <td>الأيام 1–3</td>
+            <td>150–200 ريال</td>
+            <td><span class="tag tag-gold">50 ليد</span></td>
+          </tr>
+          <tr>
+            <td><strong>Scale Phase</strong><br><span style="font-size:12px;color:var(--muted);">رفع بعد التحسين</span></td>
+            <td>الأيام 4–7</td>
+            <td>300–400 ريال</td>
+            <td><span class="tag tag-green">150+ ليد</span></td>
+          </tr>
+          <tr>
+            <td><strong>Last Push</strong><br><span style="font-size:12px;color:var(--muted);">قبل العيد بـ 48 ساعة</span></td>
+            <td>آخر يومين</td>
+            <td>500+ ريال</td>
+            <td><span class="tag tag-red">إلحاح — كل ريد يحتسب</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="font-size:12px;color:var(--muted);margin-top:8px;padding:0 4px;">
+      · الميزانية الإجمالية الموصى بها: <strong>2,500–4,000 ريال</strong> للحملة كاملة<br>
+      · متوسط CPL المتوقع في السوق السعودي لهذا النوع: <strong>8–20 ريال</strong> · هدفنا ≤15 ريال/ليد<br>
+      · استخدم <strong>Advantage Campaign Budget (CBO)</strong> وليس ABO للسماح لميتا بالتحسين التلقائي
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       6. TIMELINE
+  ══════════════════════════════════ -->
+  <div class="section">
+    <div class="section-title">٦ — الجدول الزمني (عيد الأضحى ٢٠٢٦)</div>
+    <div class="card">
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-dot active"></div>
+          <div class="tl-content">
+            <div class="tl-date">الآن — اليوم</div>
+            <div class="tl-label">🚀 إطلاق الحملة فوراً</div>
+            <div class="tl-note">رفع الكريتيف، إعداد النموذج، تشغيل الإعلان</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot soon"></div>
+          <div class="tl-content">
+            <div class="tl-date">الأسبوع الأول</div>
+            <div class="tl-label">📊 مراجعة الأداء + A/B اختبار النسختين</div>
+            <div class="tl-note">أوقف النسخة الأضعف بعد 100 ليد. ابدأ التواصل مع الليدز على الواتساب خلال أقل من ساعة</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot soon"></div>
+          <div class="tl-content">
+            <div class="tl-date">الأسبوع الثاني</div>
+            <div class="tl-label">🔥 رفع الميزانية + Retargeting</div>
+            <div class="tl-note">استهدف من زاروا الموقع أو تفاعلوا مع الإعلان ولم يكملوا النموذج</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot future"></div>
+          <div class="tl-content">
+            <div class="tl-date">آخر 48 ساعة قبل العيد</div>
+            <div class="tl-label">⏳ Last-Chance Push — «الكميات تنتهي»</div>
+            <div class="tl-note">غيّر نص الإعلان لنسخة الإلحاح B. ضاعف الميزانية</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot future"></div>
+          <div class="tl-content">
+            <div class="tl-date">يوم العيد</div>
+            <div class="tl-label">🕌 تنفيذ الطلبات + شكر العملاء</div>
+            <div class="tl-note">أوقف الحملة. أرسل رسالة شكر على الواتساب + اطلب صور من العملاء لاستخدامها في حملة السنة القادمة</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       7. PRO TIPS
+  ══════════════════════════════════ -->
+  <div class="section">
+    <div class="section-title">٧ — نصائح للحصول على أفضل نتيجة</div>
+    <div class="card">
+      <ul class="tips">
+        <li>⚡ <strong>تواصل مع كل ليد خلال أقل من ساعة</strong> — السرعة تُحوّل الليد لمبيعة قبل ما يطلب من غيرك</li>
+        <li>📲 <strong>استخدم WhatsApp Business</strong> مع رد تلقائي فوري بمجرد وصول الليد: «السلام عليكم، شكراً لطلبك من ذبحة! سيتواصل معك أحد زملائنا خلال دقائق»</li>
+        <li>🎯 <strong>أضف Lookalike Audience</strong> من قائمة عملائك الحاليين بعد 3 أيام من تشغيل الحملة</li>
+        <li>🚫 <strong>استبعد</strong> (Exclude) من أكملوا النموذج من استهداف الحملة لتجنب التكرار</li>
+        <li>📸 <strong>اطلب فيديو قصير</strong> من عميل راضٍ كـ UGC — فيديو واقعي يتفوق على أي صورة مصممة في موسم الأضاحي</li>
+        <li>💰 <strong>لا ترفع الميزانية أكثر من 20% كل 48 ساعة</strong> وإلا تتعطل خوارزمية ميتا وتبدأ Learning Phase من جديد</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<div class="doc-footer">
+  بُني بواسطة Claude Code لـ <strong>thabeha.com</strong> · عيد الأضحى ١٤٤٧ · الدمام، المنطقة الشرقية<br>
+  <span style="margin-top:4px;display:block;">للتعديل: راجع النصوص مع المسوّق قبل رفع الإعلان · اختبر النسختين A و B دائماً</span>
+</div>
+
+</body>
+</html>
