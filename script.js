@@ -12,8 +12,8 @@ const config = {
     { id: "tiktok", title: "TikTok", url: "https://www.tiktok.com/@thabeha2", subtitle: "@thabeha2", color: "#000000", icon: "🎵" },
     { id: "instagram", title: "Instagram", url: "https://instagram.com/thabehaa", subtitle: "@thabehaa", color: "#c13584", icon: "📸" },
     { id: "snapchat", title: "Snapchat", url: "https://www.snapchat.com/add/thabehaa", subtitle: "@thabehaa", color: "#FFFC00", icon: "👻" },
-    // WhatsApp adjusted to international format (assumed +966)
-    { id: "whatsapp", title: "WhatsApp", url: "https://wa.me/966598220111", subtitle: "+966 59 822 0111", color: "#25D366", icon: "💬" }
+    // WhatsApp Bot — opens a chat with a pre-filled "Hi" to activate the bot
+    { id: "whatsapp", title: "WhatsApp Bot", url: "https://wa.me/966598220111?text=Hi", subtitle: "Chat with our bot", color: "#25D366", icon: "🤖" }
   ]
 };
 
